@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://veterinario-volpe.it/sitemap.xml
