@@ -85,7 +85,7 @@ a:hover { color: var(--green-deep); }
 .brand img { height: 44px; width: auto; }
 .nav { display: flex; align-items: center; gap: var(--s5); }
 .nav a:not(.btn) { color: var(--ink); text-decoration: none; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; font-size: .9375rem; }
-.nav a:not(.btn):hover { color: var(--green-ink); }
+.nav a:not(.btn):hover, .nav a[aria-current="page"] { color: var(--green-ink); }
 
 @media (max-width: 759px) {
   :root { --header-h: 60px; }
@@ -100,6 +100,7 @@ a:hover { color: var(--green-deep); }
 .eyebrow { font-size: .875rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--green-ink); margin-bottom: var(--s4); }
 .hero__title { font-size: clamp(2.5rem, 7vw, 4.25rem); letter-spacing: -.01em; }
 .hero__role { font-size: clamp(1.25rem, 2.6vw, 1.625rem); font-weight: 300; margin: var(--s2) 0 var(--s5); }
+.hero__focus { display: block; font-weight: 500; color: var(--green-ink); }
 .hero__lead { max-width: 34em; margin-bottom: var(--s6); }
 .hero__secondary { margin-top: var(--s5); color: var(--grey); }
 
@@ -130,13 +131,55 @@ a:hover { color: var(--green-deep); }
 .services { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--s6) var(--s7); }
 @media (min-width: 640px) { .services { grid-template-columns: 1fr 1fr; } }
 .services li { position: relative; padding-left: var(--s6); }
-.services li::before {
+.services li::before, .checks li::before {
   content: ""; position: absolute; left: 2px; top: .45em;
   width: 9px; height: 9px; border-right: 2px solid var(--green); border-top: 2px solid var(--green);
   transform: rotate(45deg);
 }
 .services h3 { font-size: 1.1875rem; font-weight: 500; text-transform: uppercase; letter-spacing: .03em; margin-bottom: var(--s2); }
 .services p { color: var(--grey); }
+
+/* Check list: short items with the services chevron */
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s3); }
+.checks li { position: relative; padding-left: var(--s6); }
+
+/* Cards: short reasons, one under the other */
+.cards { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s4); max-width: 40em; }
+.cards li { background: var(--ground); border-left: 3px solid var(--green); padding: var(--s5); }
+.band--grey .cards li { background: var(--white); }
+.cards h3, .steps h3 { font-size: 1.1875rem; font-weight: 500; text-transform: uppercase; letter-spacing: .03em; margin-bottom: var(--s2); }
+.cards p, .steps p { color: var(--grey); }
+
+/* Steps: numbers in filled circles joined by a vertical line */
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; max-width: 40em; }
+.steps li { counter-increment: step; position: relative; display: grid; grid-template-columns: 48px 1fr; column-gap: var(--s5); padding-bottom: var(--s6); }
+.steps li:last-child { padding-bottom: 0; }
+.steps li > * { grid-column: 2; }
+.steps li::before {
+  content: counter(step); grid-column: 1; grid-row: 1 / span 2; position: relative; z-index: 1;
+  display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%;
+  background: var(--green-ink); color: var(--white); font-size: 1.25rem; font-weight: 500;
+}
+.steps li::after { content: ""; position: absolute; left: 23px; top: 48px; bottom: 0; width: 2px; background: var(--green); }
+.steps li:last-child::after { display: none; }
+.steps h3 { padding-top: var(--s3); }
+
+/* Intro paragraph above a list and side notes */
+.intro { max-width: 40em; margin-bottom: var(--s6); }
+.note { max-width: 40em; margin-top: var(--s6); padding: var(--s4) var(--s5); background: var(--ground); border-left: 3px solid var(--green); }
+.band--grey .note { background: var(--white); }
+
+/* FAQ */
+.faq { max-width: 44em; border-top: 1px solid var(--rule); }
+.faq details { border-bottom: 1px solid var(--rule); }
+.faq summary {
+  cursor: pointer; list-style: none; position: relative;
+  padding: var(--s4) var(--s7) var(--s4) 0; font-size: 1.125rem; font-weight: 500;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: var(--s2); top: var(--s3); font-size: 1.5rem; font-weight: 300; color: var(--green-ink); }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { color: var(--grey); padding-bottom: var(--s4); }
 
 /* Bio */
 .bio { max-width: 40em; }
@@ -162,6 +205,7 @@ a:hover { color: var(--green-deep); }
 .option .btn { margin-top: var(--s2); }
 
 .calendar { border: 1px solid var(--rule); background: var(--ground); }
+.band--grey .calendar { background: var(--white); }
 .calendar__consent { padding: var(--s6) var(--s5); max-width: 40em; }
 .calendar__consent p { color: var(--grey); font-size: .9375rem; margin-bottom: var(--s5); }
 .calendar iframe { display: block; width: 100%; height: 760px; border: 0; background: var(--white); }
@@ -198,6 +242,12 @@ a:hover { color: var(--green-deep); }
   }
   .quickbar a:first-child { background: var(--green-ink); color: var(--white); }
 }
+
+/* Service subpages: breadcrumb above the title, no sticky title in the page head */
+.breadcrumb { font-size: .875rem; color: var(--grey); margin-bottom: var(--s4); }
+.breadcrumb a { color: var(--green-ink); }
+.page-head .section-title { position: static; }
+.page-head .actions { margin-top: var(--s6); }
 
 /* Legal pages */
 .page { padding: var(--s7) 0 var(--s8); }
