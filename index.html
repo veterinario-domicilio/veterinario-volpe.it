@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Veterinario a domicilio a Bologna – Dott. Francesco Volpe</title>
-  <meta name="description" content="Il Dott. Francesco Volpe, medico veterinario a domicilio a Bologna e provincia: visite, vaccini, esami di laboratorio e microchip per cani e gatti; pareggio e parassitologia per cavalli. Prenota online o su WhatsApp.">
+  <title>Veterinario a domicilio a Bologna – Fisioterapia e laserterapia</title>
+  <meta name="description" content="Il Dott. Francesco Volpe, medico veterinario a domicilio a Bologna e provincia: fisioterapia e laserterapia, visite, vaccini, esami di laboratorio e microchip per cani e gatti; pareggio e parassitologia per cavalli. Prenota online o su WhatsApp.">
   <link rel="canonical" href="https://veterinario-volpe.it/">
   <meta name="theme-color" content="#4E7A14">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
-  <meta property="og:title" content="Veterinario a domicilio a Bologna – Dott. Francesco Volpe">
-  <meta property="og:description" content="Visite e terapie a casa, per cani, gatti e cavalli. Bologna e provincia.">
+  <meta property="og:title" content="Veterinario a domicilio a Bologna, fisioterapia e laserterapia – Dott. Volpe">
+  <meta property="og:description" content="Visite, terapie, fisioterapia e laserterapia a casa, per cani e gatti. Bologna e provincia.">
   <meta property="og:url" content="https://veterinario-volpe.it/">
   <meta property="og:image" content="https://veterinario-volpe.it/assets/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
@@ -27,6 +27,7 @@
   {
     "@context": "https://schema.org",
     "@type": "VeterinaryCare",
+    "@id": "https://veterinario-volpe.it/#veterinario",
     "name": "Veterinario a domicilio – Dott. Francesco Volpe",
     "url": "https://veterinario-volpe.it/",
     "image": "https://veterinario-volpe.it/assets/img/dott-volpe-800.jpg",
@@ -48,11 +49,29 @@
       "@type": "Person",
       "name": "Francesco Volpe",
       "honorificPrefix": "Dott.",
-      "jobTitle": "Medico veterinario"
+      "jobTitle": "Medico veterinario",
+      "knowsAbout": ["Fisioterapia veterinaria", "Laserterapia veterinaria", "Riabilitazione veterinaria", "Parassitologia veterinaria"]
+    },
+    "makesOffer": {
+      "@type": "Offer",
+      "itemOffered": {"@id": "https://veterinario-volpe.it/fisioterapia/#servizio", "@type": "Service", "name": "Fisioterapia, riabilitazione e laserterapia veterinaria a domicilio", "url": "https://veterinario-volpe.it/fisioterapia/"}
     },
     "sameAs": [
       "https://www.facebook.com/veterinariodomiciliovolpe/",
       "https://www.instagram.com/veterinariodomiciliovolpe/"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "In quali zone vieni?", "acceptedAnswer": {"@type": "Answer", "text": "A Bologna e nei comuni della provincia. Se non sei sicuro che la tua zona sia coperta, chiedimelo."}},
+      {"@type": "Question", "name": "Quanto costa una visita a domicilio?", "acceptedAnswer": {"@type": "Answer", "text": "Dipende dal tipo di visita e dalla zona: te lo comunico prima di fissare l'appuntamento."}},
+      {"@type": "Question", "name": "Come prenoto?", "acceptedAnswer": {"@type": "Answer", "text": "Nel calendario online scegli giorno e orario liberi. In alternativa scrivimi su WhatsApp o chiamami, dal lunedì al venerdì dalle 9.30 alle 17.30."}},
+      {"@type": "Question", "name": "Fai anche fisioterapia e laserterapia?", "acceptedAnswer": {"@type": "Answer", "text": "Sì: visita fisiatrica, riabilitazione e laserterapia per cani e gatti, a casa tua."}},
+      {"@type": "Question", "name": "Vieni anche per le urgenze?", "acceptedAnswer": {"@type": "Answer", "text": "No, non è un servizio di pronto soccorso. In caso di emergenza rivolgiti subito a una clinica veterinaria aperta 24 ore."}}
     ]
   }
   </script>
@@ -67,6 +86,7 @@
       </a>
       <nav class="nav" aria-label="Menu principale">
         <a href="#servizi">Servizi</a>
+        <a href="/fisioterapia/">Fisioterapia</a>
         <a href="#chi-sono">Chi sono</a>
         <a href="#contatti">Contatti</a>
         <a class="btn btn--primary btn--small" href="#prenota">Prenota</a>
@@ -79,8 +99,8 @@
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="hero__text">
         <p class="eyebrow">A Bologna e provincia, per cani e gatti</p>
-        <h1 id="hero-title" class="hero__title"><span class="light">Dott.</span> Francesco Volpe</h1>
-        <p class="hero__role">Medico veterinario a domicilio</p>
+        <h1 id="hero-title" class="hero__title"><span class="light">Dott.</span> Volpe</h1>
+        <p class="hero__role">Medico veterinario a domicilio <span class="hero__focus">Esperto in fisioterapia e laserterapia</span></p>
         <p class="hero__lead">Il veterinario a domicilio nasce dall'esigenza di abbattere lo stress del viaggio e le attese in sala d'aspetto, sia al paziente che al proprietario. Visite e terapie vengono comodamente fatte a casa.</p>
         <div class="actions">
           <a class="btn btn--primary" href="#prenota">
@@ -106,6 +126,10 @@
       <div class="wrap band__grid">
         <h2 id="servizi-title" class="section-title"><span class="light">I miei</span> servizi</h2>
         <ul class="services">
+          <li>
+            <h3>Fisioterapia e laserterapia</h3>
+            <p>Visita fisiatrica e riabilitazione dopo un intervento, per l'artrosi o per problemi neurologici, con terapie manuali, esercizi e laser terapeutico. <a href="/fisioterapia/">Come funziona la fisioterapia a domicilio</a></p>
+          </li>
           <li>
             <h3>Visita clinica domiciliare</h3>
             <p>Raccolta anamnesi e visita clinica.</p>
@@ -138,6 +162,26 @@
       </div>
     </section>
 
+    <section class="band band--grey" id="perche-a-domicilio" aria-labelledby="perche-title">
+      <div class="wrap band__grid">
+        <h2 id="perche-title" class="section-title"><span class="light">Perché a</span> domicilio</h2>
+        <ul class="cards">
+          <li>
+            <h3>Meno stress</h3>
+            <p>Niente trasportino, niente auto, niente odori e rumori di una sala d'attesa, né per l'animale né per te.</p>
+          </li>
+          <li>
+            <h3>Vedo dove vive</h3>
+            <p>Vedo come si muove e dove passa le giornate: posso darti consigli sulla casa vera, non su una ipotetica.</p>
+          </li>
+          <li>
+            <h3>Comodo per chi fatica a muoversi</h3>
+            <p>Per un animale grande, anziano o appena operato lo spostamento è spesso la parte più difficile.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <section class="band band--green" id="chi-sono" aria-labelledby="chi-sono-title">
       <div class="wrap band__grid">
         <h2 id="chi-sono-title" class="section-title"><span class="light">Su di</span> me</h2>
@@ -165,7 +209,27 @@
       </div>
     </section>
 
-    <section class="band" id="prenota" aria-labelledby="prenota-title">
+    <section class="band" id="come-funziona" aria-labelledby="come-title">
+      <div class="wrap band__grid">
+        <h2 id="come-title" class="section-title"><span class="light">Come</span> funziona</h2>
+        <ol class="steps">
+          <li>
+            <h3>Prenoti</h3>
+            <p>Scegli un orario nel calendario online, oppure scrivimi su WhatsApp o chiamami e raccontami di cosa ha bisogno il tuo animale.</p>
+          </li>
+          <li>
+            <h3>Vengo a casa tua</h3>
+            <p>Visito il tuo animale nel suo ambiente, senza trasporto e senza attese.</p>
+          </li>
+          <li>
+            <h3>Ti lascio le indicazioni</h3>
+            <p>Ti spiego cosa ho trovato, eseguo le terapie e ti dico come proseguire: esami, controlli, cure da continuare a casa.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="band band--grey" id="prenota" aria-labelledby="prenota-title">
       <div class="wrap band__grid">
         <h2 id="prenota-title" class="section-title"><span class="light">Prenota</span> una visita</h2>
         <div class="booking">
@@ -193,6 +257,35 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="domande" aria-labelledby="domande-title">
+      <div class="wrap band__grid">
+        <h2 id="domande-title" class="section-title"><span class="light">Domande</span> frequenti</h2>
+        <div class="faq">
+          <details>
+            <summary>In quali zone vieni?</summary>
+            <p>A Bologna e nei comuni della provincia. Se non sei sicuro che la tua zona sia coperta, chiedimelo.</p>
+          </details>
+          <details>
+            <summary>Quanto costa una visita a domicilio?</summary>
+            <p>Dipende dal tipo di visita e dalla zona: te lo comunico prima di fissare l'appuntamento.</p>
+          </details>
+          <details>
+            <summary>Come prenoto?</summary>
+            <p>Nel <a href="#prenota">calendario online</a> scegli giorno e orario liberi. In alternativa scrivimi su WhatsApp o chiamami, dal lunedì al venerdì dalle 9.30 alle 17.30.</p>
+          </details>
+          <details>
+            <summary>Fai anche fisioterapia e laserterapia?</summary>
+            <p>Sì: visita fisiatrica, riabilitazione e laserterapia per cani e gatti, a casa tua. Trovi tutto nella <a href="/fisioterapia/">pagina sulla fisioterapia</a>.</p>
+          </details>
+          <!-- DA CONFERMARE col dottore: vale per tutta l'attività, non solo per la fisioterapia -->
+          <details>
+            <summary>Vieni anche per le urgenze?</summary>
+            <p>No, non è un servizio di pronto soccorso. In caso di emergenza rivolgiti subito a una clinica veterinaria aperta 24 ore.</p>
+          </details>
         </div>
       </div>
     </section>
