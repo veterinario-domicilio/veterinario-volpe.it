@@ -249,6 +249,20 @@ a:hover { color: var(--green-deep); }
 .page-head .section-title { position: static; }
 .page-head .actions { margin-top: var(--s6); }
 
+/* Consent banner for statistics cookies: Accept and Reject look the same */
+.consent {
+  position: fixed; left: var(--s4); right: var(--s4); bottom: var(--s4); z-index: 30;
+  max-width: 560px; padding: var(--s5); font-size: .9375rem;
+  background: var(--white); border: 1px solid var(--rule); border-top: 3px solid var(--green);
+  box-shadow: 0 8px 24px rgba(31, 36, 32, .12);
+}
+.consent p { margin-bottom: var(--s4); }
+.consent .btn { flex: 1 1 0; }
+@media (max-width: 759px) {
+  .quickbar ~ .consent { bottom: calc(64px + env(safe-area-inset-bottom) + var(--s3)); }
+}
+.link-button { font: inherit; color: var(--white); background: none; border: 0; padding: 0; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+
 /* Legal pages */
 .page { padding: var(--s7) 0 var(--s8); }
 .page .wrap { max-width: 800px; }
